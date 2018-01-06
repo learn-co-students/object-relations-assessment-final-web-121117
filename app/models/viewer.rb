@@ -1,7 +1,6 @@
 class Viewer
   attr_accessor :username
 
-
   @@all = []
 
   def initialize(username)
@@ -19,14 +18,13 @@ class Viewer
     end
   end
 
-  def rating_rate
-    rating_rate = rating(1..5)
-  end
-
   def rate_movie(movie, rating)
     find_movie = WatchListing.all.find {|watchlisting_instance| watchlisting_instance.movie == movie}
-    find_movie.rating == rating
+    if rating <= 5
+      find_movie.rating == rating
+    else
+      nil
+    end
   end
-
 
 end

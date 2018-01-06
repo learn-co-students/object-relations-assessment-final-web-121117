@@ -16,7 +16,7 @@ class WatchListing
   end
 
   def rating
-    self.movie.rating
+    self.rating
   end
 
 end
